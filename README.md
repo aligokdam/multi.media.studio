@@ -1,4 +1,4 @@
-## <img src="assets/icon.svg" alt="Multi Media Studio logo" width="32" height="32" align="center"> Multi Media Studio
+## <img src="assets/icon-512.png" alt="Multi Media Studio logo" width="32" height="32" align="center"> Multi Media Studio
 
 Edit videos with a multi-track timeline directly in your browser.
 
