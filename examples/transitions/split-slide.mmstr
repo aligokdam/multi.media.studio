@@ -1,4 +1,0 @@
-{
-  "name": "Split Slide",
-  "glsl": "vec4 transition(vec2 uv) {\n  float top = step(0.5, uv.y);\n  float dir = top * 2.0 - 1.0;\n  vec2 a = uv + vec2(dir * progress, 0.0);\n  vec2 b = uv + vec2(dir * (progress - 1.0), 0.0);\n  bool showB = dir > 0.0 ? uv.x < progress : uv.x > 1.0 - progress;\n  return showB ? getToColor(b) : getFromColor(a);\n}"
-}
