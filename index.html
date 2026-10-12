@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- The page may only talk to its own origin. Media is read from files the user picks
+     (blob: URLs) and never sent anywhere; there are no analytics or third-party calls. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' data: blob:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; manifest-src 'self'">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="A free, local-first video editor that runs in your browser. Multi-track timeline, effects, transitions, titles, a royalty-free music library and MP4/WebM export. Your media never leaves your device.">
+<title>Multi Media Studio</title>
+<script src="src/boot.js"></script>
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="manifest" href="app.webmanifest">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/landing.css">
+<link rel="stylesheet" href="assets/css/studio.css">
+<link rel="stylesheet" href="assets/css/photo-editor.css">
+<link rel="modulepreload" href="src/main.js">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<!-- ============================================================ SITE (landing + legal) -->
+<div class="site" id="site">
+  <header class="site-nav" id="siteNav">
+    <div class="site-nav-inner">
+      <a class="brand" href="#/" data-scroll-top data-i18n-aria="nav.home" aria-label="Home">
+        <span data-mark></span>
+        <span class="brand-name">Multi Media Studio</span>
+      </a>
+      <nav class="site-links" data-i18n-aria="nav.sections" aria-label="Sections">
+        <a href="#how" data-scroll="how" data-i18n="nav.how">How it works</a>
+        <a href="#features" data-scroll="features" data-i18n="nav.features">Features</a>
+        <a href="#faq" data-scroll="faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="site-actions">
+        <button class="icon-btn" type="button" data-action="language" data-i18n-aria="nav.language" data-i18n-title="nav.language" aria-label="Language"><span data-icon="globe"></span></button>
+        <button class="icon-btn" type="button" data-action="theme" data-theme-toggle>
+          <svg class="theme-glyph" viewBox="0 0 24 24" aria-hidden="true">
+            <mask id="tgMask"><rect width="24" height="24" fill="#fff"/><circle class="tg-bite" cx="17" cy="7" r="5" fill="#000"/></mask>
+            <circle class="tg-core" cx="12" cy="12" r="4.4" fill="currentColor" mask="url(#tgMask)"/>
+            <g class="tg-rays" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g>
+          </svg>
+        </button>
+        <a class="btn primary small" href="#/studio/new"><span data-icon="plus"></span><span data-i18n="cta.start">Create</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="landing" id="main" tabindex="-1">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <h1 class="hero-title" id="heroTitle">Multi Media Studio</h1>
+      <p class="hero-text" data-i18n="hero.text">A professional video editor that runs entirely in your browser.</p>
+      <div class="hero-actions">
+        <a class="btn primary large" href="#/studio/new"><span data-icon="plus"></span><span data-i18n="cta.start">Create</span></a>
+        <a class="btn large" href="https://github.com/aligokdam/multi.media.studio" target="_blank" rel="noopener noreferrer"><span data-icon="github"></span><span data-i18n="cta.github">View on GitHub</span></a>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="lp-block" id="how" aria-labelledby="howTitle">
+      <div class="block-head">
+        <p class="eyebrow" data-i18n="nav.how">How it works</p>
+        <h2 id="howTitle" data-i18n="how.title">From clips to a finished video in four steps</h2>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="step-num" aria-hidden="true">1</span><span class="step-icon" data-icon="plus"></span><h3 data-i18n="how.s1.title">Create</h3><p data-i18n="how.s1.text"></p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">2</span><span class="step-icon" data-icon="importFile"></span><h3 data-i18n="how.s2.title">Add media</h3><p data-i18n="how.s2.text"></p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">3</span><span class="step-icon" data-icon="split"></span><h3 data-i18n="how.s3.title">Edit</h3><p data-i18n="how.s3.text"></p></li>
+        <li class="step"><span class="step-num" aria-hidden="true">4</span><span class="step-icon" data-icon="exportFile"></span><h3 data-i18n="how.s4.title">Export</h3><p data-i18n="how.s4.text"></p></li>
+      </ol>
+    </section>
+
+    <!-- Features -->
+    <section class="lp-block" id="features" aria-labelledby="featuresTitle">
+      <div class="block-head">
+        <p class="eyebrow" data-i18n="nav.features">Features</p>
+        <h2 id="featuresTitle" data-i18n="features.title">Everything you need to edit. Nothing more.</h2>
+      </div>
+      <div class="features">
+        <article class="feature"><span class="feature-icon" data-icon="timeline"></span><h3 data-i18n="features.f1.title"></h3><p data-i18n="features.f1.text"></p></article>
+        <article class="feature"><span class="feature-icon" data-icon="effects"></span><h3 data-i18n="features.f2.title"></h3><p data-i18n="features.f2.text"></p></article>
+        <article class="feature"><span class="feature-icon" data-icon="text"></span><h3 data-i18n="features.f3.title"></h3><p data-i18n="features.f3.text"></p></article>
+        <article class="feature"><span class="feature-icon" data-icon="sticker"></span><h3 data-i18n="features.f4.title"></h3><p data-i18n="features.f4.text"></p></article>
+        <article class="feature"><span class="feature-icon" data-icon="exportFile"></span><h3 data-i18n="features.f5.title"></h3><p data-i18n="features.f5.text"></p></article>
+        <article class="feature"><span class="feature-icon" data-icon="devices"></span><h3 data-i18n="features.f6.title"></h3><p data-i18n="features.f6.text"></p></article>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values" aria-labelledby="valuesTitle">
+      <h2 class="values-title" id="valuesTitle" data-i18n="values.title">Free, open source and private</h2>
+      <div class="values-grid">
+        <div class="value-item"><span data-icon="star"></span><h3 data-i18n="values.free.title">Free</h3><p data-i18n="values.free.text"></p></div>
+        <div class="value-item"><span data-icon="code"></span><h3 data-i18n="values.open.title">Open source</h3><p data-i18n="values.open.text"></p></div>
+        <div class="value-item"><span data-icon="lock"></span><h3 data-i18n="values.private.title">Private</h3><p data-i18n="values.private.text"></p></div>
+      </div>
+    </section>
+
+    <!-- GitHub -->
+    <section class="lp-block github" id="github" aria-labelledby="githubTitle">
+      <div class="repo-card">
+        <span class="repo-icon" data-icon="github"></span>
+        <h2 id="githubTitle">GitHub</h2>
+        <a class="btn primary large" href="https://github.com/aligokdam/multi.media.studio" target="_blank" rel="noopener noreferrer"><span data-icon="github"></span><span data-i18n="cta.github">View on GitHub</span></a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-labelledby="ctaTitle">
+      <h2 id="ctaTitle" data-i18n="cta.title">Ready to edit?</h2>
+      <p data-i18n="cta.text"></p>
+      <a class="btn primary large" href="#/studio/new"><span data-icon="plus"></span><span data-i18n="cta.start">Create</span></a>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faqTitle">
+      <h2 id="faqTitle" data-i18n="faq.title">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary><span data-i18n="faq.q10"></span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.a10"></p></details>
+        <details><summary><span data-i18n="faq.q1"></span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.a1"></p></details>
+        <details><summary><span data-i18n="faq.q4"></span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.a4"></p></details>
+        <details><summary><span data-i18n="faq.q11"></span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.a11"></p></details>
+        <details><summary><span data-i18n="faq.q5"></span><span class="faq-icon" aria-hidden="true"></span></summary><p data-i18n="faq.a5"></p></details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ LEGAL -->
+  <main class="legal" id="legal" tabindex="-1">
+    <article class="legal-doc" data-doc="terms">
+      <header class="legal-head">
+        <h1 data-i18n="terms.title">Terms of Use</h1>
+        <p class="legal-updated" data-i18n="legal.updated"></p>
+        <p class="legal-intro" data-i18n="terms.intro"></p>
+      </header>
+      <section><h2><span class="legal-num">1</span><span data-i18n="terms.h1"></span></h2><p data-i18n="terms.p1"></p></section>
+      <section><h2><span class="legal-num">2</span><span data-i18n="terms.h2"></span></h2><p data-i18n="terms.p2"></p></section>
+      <section><h2><span class="legal-num">3</span><span data-i18n="terms.h3"></span></h2><p data-i18n-html="terms.p3"></p></section>
+      <section><h2><span class="legal-num">4</span><span data-i18n="terms.h4"></span></h2><p data-i18n="terms.p4"></p></section>
+      <section><h2><span class="legal-num">5</span><span data-i18n="terms.h5"></span></h2><p data-i18n="terms.p5"></p></section>
+      <section><h2><span class="legal-num">6</span><span data-i18n="terms.h6"></span></h2><p data-i18n="terms.p6"></p></section>
+      <section><h2><span class="legal-num">7</span><span data-i18n="terms.h7"></span></h2><p data-i18n-html="terms.p7"></p></section>
+      <section><h2><span class="legal-num">8</span><span data-i18n="terms.h8"></span></h2><p data-i18n="terms.p8"></p></section>
+      <section><h2><span class="legal-num">9</span><span data-i18n="terms.h9"></span></h2><p data-i18n="terms.p9"></p></section>
+      <section><h2><span class="legal-num">10</span><span data-i18n="terms.h10"></span></h2><p data-i18n-html="terms.p10"></p></section>
+    </article>
+    <article class="legal-doc plain" data-doc="privacy">
+      <header class="legal-head">
+        <h1 data-i18n="privacy.title">Privacy Policy</h1>
+        <p class="legal-updated" data-i18n="privacy.updated"></p>
+        <p class="legal-intro" data-i18n="privacy.intro"></p>
+      </header>
+      <section><h2 data-i18n="privacy.glance"></h2>
+        <ul class="doc-list"><li data-i18n="privacy.l1"></li><li data-i18n="privacy.l2"></li><li data-i18n="privacy.l3"></li><li data-i18n="privacy.l4"></li><li data-i18n="privacy.l5"></li><li data-i18n="privacy.l6"></li></ul>
+      </section>
+      <section><h2 data-i18n="privacy.h.media"></h2><p data-i18n="privacy.p.media"></p></section>
+      <section><h2 data-i18n="privacy.h.stored"></h2><p data-i18n="privacy.p.stored"></p><ul class="doc-list"><li data-i18n="privacy.stored.a"></li><li data-i18n="privacy.stored.b"></li><li data-i18n="privacy.stored.c"></li><li data-i18n="privacy.stored.d"></li></ul><p data-i18n="privacy.stored.note"></p></section>
+      <section><h2 data-i18n="privacy.h.save"></h2><p data-i18n="privacy.p.save"></p></section>
+      <section><h2 data-i18n="privacy.h.tracking"></h2><p data-i18n="privacy.p.tracking"></p></section>
+      <section><h2 data-i18n="privacy.h.hosting"></h2><p data-i18n="privacy.p.hosting"></p></section>
+      <section><h2 data-i18n="privacy.h.changes"></h2><p data-i18n="privacy.p.changes"></p></section>
+      <section><h2 data-i18n="privacy.h.control"></h2><p data-i18n="privacy.p.control"></p></section>
+      <section><h2 data-i18n="privacy.h.contact"></h2><p data-i18n-html="privacy.p.contact"></p></section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="legal-links" data-i18n-aria="nav.footer" aria-label="Footer">
+      <a href="#/privacy" data-sheet="privacy"><span data-icon="lock"></span><span data-i18n="privacy.title">Privacy Policy</span></a>
+      <span aria-hidden="true">·</span>
+      <a href="#/terms" data-i18n="footer.terms">Terms</a>
+    </nav>
+  </footer>
+</div>
+
+<!-- ============================================================ STUDIO (built by src/studio) -->
+<div class="studio" id="studio" data-i18n-aria="studio.label" aria-label="Studio"></div>
+
+<div class="live-region sr-only" id="liveRegion" aria-live="polite"></div>
+<noscript><p class="noscript">Multi Media Studio needs JavaScript to run. Everything runs locally in your browser.</p></noscript>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
