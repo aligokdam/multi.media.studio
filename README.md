@@ -12,26 +12,17 @@ Tüm işlemler tarayıcınızda yerel olarak gerçekleşir. Medyanız hiçbir su
 
 ## Özellikler
 
-- 🎞️ Video, fotoğraf, metin, müzik ve ses efektleri için çok kanallı zaman çizelgesi
-- ➕ Kanal ekleme, yeniden adlandırma ve silme (üst üste birden fazla müzik kanalı dahil)
-- ✂️ Klipleri bölme, kırpma, birleştirme, çoğaltma ve yeniden sıralama
-- 🔎 Her kütüphanede arama, kategori ve filtreler, İçeri Aktar düğmesi ve sürükle bırak
-- 🎨 14 renk filtresi ve ayarlanabilir GPU efektleri: Cutout, Posterize, Eşik, Piksel, Glitch, RGB Kayması, Halftone, Eski Baskı, Kenar ve Kontur, Kabartma ve daha fazlası (fotoğraf ve videoda aynı kod), kendi `.mmsfx` efektleriniz
-- 🔀 4 kategoride 22 geçiş ve GL Transitions `.glsl` dosyalarını içeri aktarma
-- 🚫 Efekt veya geçiş istemeyenler için tek dokunuşla "Yok" seçeneği
-- 🔤 Başlıklar ve altyazılar, Denetçi'den seçilen 18 giriş ve çıkış geçişi
-- 🅰️ 16 açık lisanslı yazı tipi ve kendi TTF, OTF, WOFF, WOFF2 yazı tiplerinizi içeri aktarma
-- 😀 18 hazır çıkartma: gülen yüzler ve semboller (CC0, bu uygulama için çizildi) ve PNG, JPG, WebP, GIF, SVG ile kendi çıkartmalarınız
-- 🎵 Yerleşik telifsiz müzik: 50 parçalık Vlog kategorisi dahil 10 türde 68 parça, ayrıca 15 kategoride 145 ses efekti (CC0, cihazda üretilir)
-- 🎧 MP3, WAV, M4A, AAC, OGG, Opus, FLAC, AIFF ve WebM ses desteği (tarayıcının çözebildiği ölçüde)
-- ⏩ Hız, ses seviyesi ve geçişler
-- ↩️ Geri al ve yinele
-- 💾 8K'ya kadar, 24 ile 60 fps arası MP4 ve WebM dışa aktarma (cihazın kodlayıcısı destekliyorsa)
-- 🖼️ Fotoğraf düzenleyici: tek fotoğraf ya da en fazla 9 fotoğraflı kolaj, 14 filtre, efektler, ayarlar, metin ve çıkartma, 8K'ya kadar JPG, PNG, WebP
-- 📦 Proje dışa ve içeri aktarma (.mmsp)
-- 📱 Telefona özel yerleşim, açık ve koyu tema
-- 🌍 Sağdan sola desteğiyle 24 dil
-- 🔒 Tamamen istemci tarafında işleme
+🎞️ Çok kanallı zaman çizelgesi: video, fotoğraf, metin, müzik ve ses
+✂️ Bölme, kırpma, çoğaltma, hız ve ses ayarı, geri al ve yinele
+🎨 Renk filtreleri, Cutout ve diğer GPU efektleri, geçişler
+🔤 Giriş ve çıkış hareketli başlıklar, kendi yazı tiplerinizi ekleme
+😀 Hazır çıkartmalar ve kendi görselleriniz
+🎵 Telifsiz müzik ve ses efektleri (CC0)
+🖼️ Fotoğraf düzenleyici ve kolaj
+💾 8K’ya kadar, 24 ile 60 fps arası MP4 ve WebM dışa aktarma
+📱 Telefon, tablet ve bilgisayar, açık ve koyu tema, birçok dil
+🔒 Her şey cihazınızda, hiçbir şey yüklenmez
+
 
 ---
 
@@ -47,41 +38,6 @@ Tüm işlemler tarayıcınızda yerel olarak gerçekleşir. Medyanız hiçbir su
 ## Proje Yapısı
 
 Kökte yalnızca üç dosya vardır. Uygulama iki klasöre bölünmüştür: `mms/` uygulamanın kendisini (kod, bileşenler, stiller), `m.m.s/` ise diller, kütüphaneler, örnekler, betikler ve tek dosyalık sürümü içerir. Böylece her iki klasör de 100 dosyanın çok altında kalır ve GitHub'a ayrı ayrı, tek seferde yüklenebilir. Klasör adları İngilizcedir ve her klasörün ne işe yaradığı `m.m.s/DOCS.md` rehberinde anlatılır.
-
-```text
-multi.media.studio/
-├── index.html              ana sayfa ve koşullar (uygulamanın giriş noktası)
-├── README.md               bu dosya
-├── LICENSE                 MIT lisansı
-├── mms/                    uygulama
-│   ├── app.webmanifest     uygulama kimliği: ad, simge, renk (ana ekrana ekleme)
-│   ├── assets/
-│   │   ├── css/            base, landing, studio, photo-editor stilleri
-│   │   ├── icons/          uygulama simgeleri ve README logosu
-│   │   └── fonts/          16 açık lisanslı yazı tipi (tek dosyada) ve lisans metinleri
-│   ├── src/
-│   │   ├── main.js, boot.js, config.js
-│   │   ├── core/           ortak yardımcılar, dil, ayarlar ve tema, simgeler
-│   │   ├── studio/         proje listesi, video düzenleyici, zaman çizelgesi, denetçi
-│   │   ├── photo-editor/   fotoğraf düzenleyici ve kolaj
-│   │   ├── media/          dosya içeri aktarma ve doğrulama
-│   │   ├── render/         WebGL2 birleştirici, efektler, filtreler, geçişler, metin, yazı tipleri, çıkartmalar
-│   │   ├── audio/          müzik ve ses efektlerini üreten sentezleyici
-│   │   ├── export/         MP4 ve WebM dışa aktarma
-│   │   ├── storage/        yerel depolama ve .mmsp paketleri
-│   │   └── workers/        dalga biçimi ve zaman esnetme işçileri
-│   └── components/         ortak arayüz bileşenleri ve kütüphane panelleri
-└── m.m.s/                  uygulamanın yanındaki dosyalar
-    ├── DOCS.md             geliştirici rehberi (her klasörün açıklaması)
-    ├── locales/            24 dil
-    ├── libraries/          mediabunny (MPL-2.0), fflate (MIT)
-    ├── examples/           örnek efekt ve geçiş dosyaları
-    ├── standalone/         tek dosyalık sürüm (index.html klasörden açılınca bunu kullanır)
-    └── scripts/            dil denetleyici, tek dosya derleme
-```
-
-Yerel olarak çalıştırmanın en kolay yolu `index.html` dosyasını çift tıklayarak açmaktır. Tarayıcılar klasörden açılan sayfalarda modülleri engellediği için uygulama bu durumda otomatik olarak `m.m.s/standalone/multi-media-studio.html` sürümüne geçer. İsterseniz klasörü bir statik sunucuyla da sunabilirsiniz (örneğin `python3 -m http.server`).
-`python3 m.m.s/scripts/build-single.py` bu tek dosyalık sürümü yeniden derler.
 
 ---
 
