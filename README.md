@@ -75,12 +75,10 @@ Yerel olarak çalıştırmanın en kolay yolu `index.html` dosyasını çift tı
 
 ---
 
-## Lisans
+## License
 
-MIT Lisansı
-
-Yerleşik müzik ve sesler CC0 1.0. Yazı tipleri SIL Open Font License 1.1 (Permanent Marker için Apache 2.0) altındadır, lisans metinleri `mms/assets/fonts/LICENSES.txt` dosyasındadır.
+MIT License
 
 ---
 
-**Ali Gökdam** tarafından oluşturuldu
+Created by **Ali Gökdam**
