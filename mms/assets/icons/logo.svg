@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>Multi Media Studio</title>
+  <rect width="128" height="128" rx="28" fill="#000"/>
+  <g fill="#fff" transform="translate(22.4 22.4) scale(2.6)">
+    <path d="M4.6 3h5L6.6 9.2H2V5.6A2.6 2.6 0 0 1 4.6 3z"/>
+    <path d="M12 3h5.2l-3 6.2H9z"/>
+    <path d="M19.6 3h7.8A2.6 2.6 0 0 1 30 5.6v3.6H16.6z"/>
+    <rect x="2" y="11.4" width="28" height="17.6" rx="3.6"/>
+  </g>
+</svg>
