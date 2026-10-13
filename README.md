@@ -1,77 +1,77 @@
-# <img src="mms/assets/icons/logo.svg" alt="Multi Media Studio logosu" width="64" height="64" align="center"> Multi Media Studio
+# <img src="mms/assets/icons/logo.svg" alt="Multi Media Studio logo" width="64" height="64" align="center"> Multi Media Studio
 
-Videolarınızı çok kanallı bir zaman çizelgesiyle doğrudan tarayıcınızda düzenleyin.
+Edit your videos right in your browser with a multi-track timeline.
 
-Multi Media Studio, kliplerinizi kesmenizi, katmanlamanızı, renklendirmenizi, başlık ve müzik eklemenizi, ardından MP4 veya WebM olarak dışa aktarmanızı sağlayan açık kaynaklı bir video düzenleyicidir. Telefonda mobil video düzenleyicilerine benzeyen bir yerleşim, masaüstünde ise tam bir çalışma alanı sunar.
+Multi Media Studio is an open-source video editor that lets you cut, layer and color your clips, add titles and music, then export to MP4 or WebM. On a phone it offers a layout similar to mobile video editors; on a desktop, a full workspace.
 
-Tüm işlemler tarayıcınızda yerel olarak gerçekleşir. Medyanız hiçbir sunucuya yüklenmez. Projeler yalnızca bu tarayıcıda, bu cihazda saklanır.
+Everything happens locally in your browser. Your media is never uploaded to any server. Projects are stored only in this browser, on this device.
 
-🌐 **Canlı Demo Bağlantısı :** https://aligokdam.github.io/multi.media.studio/
-
----
-
-## Özellikler
-
-- 🎞️ Çok kanallı zaman çizelgesi: video, fotoğraf, metin, müzik ve ses
-- ✂️ Bölme, kırpma, çoğaltma, hız ve ses ayarı, geri al ve yinele
-- 🎨 Renk filtreleri, Cutout ve diğer GPU efektleri, geçişler
-- 🔤 Giriş ve çıkış hareketli başlıklar, kendi yazı tiplerinizi ekleme
-- 😀 Hazır çıkartmalar ve kendi görselleriniz
-- 🎵 Telifsiz müzik ve ses efektleri (CC0)
-- 🖼️ Fotoğraf düzenleyici ve kolaj
-- 💾 8K'ya kadar, 24 ile 60 fps arası MP4 ve WebM dışa aktarma
-- 📱 Telefon, tablet ve bilgisayar, açık ve koyu tema, birçok dil
-- 🔒 Her şey cihazınızda, hiçbir şey yüklenmez
+🌐 **Live Demo:** https://aligokdam.github.io/multi.media.studio/
 
 ---
 
-## Nasıl Çalışır
+## Features
 
-1. Oluştur'a basıp fotoğraf ya da video seçin. Fotoğraflar fotoğraf düzenleyicide, videolar video düzenleyicide açılır.
-2. Video, fotoğraf ve ses ekleyin.
-3. Zaman çizelgesinde düzenleyin: kesin, başlık, geçiş, efekt ve renk ekleyin.
-4. Videonuzu MP4 veya WebM olarak dışa aktarın.
+- 🎞️ Multi-track timeline: video, photo, text, music and audio
+- ✂️ Split, trim, duplicate, speed and volume control, undo and redo
+- 🎨 Color filters, Cutout and other GPU effects, transitions
+- 🔤 Animated intro and outro titles, add your own fonts
+- 😀 Ready-made stickers and your own images
+- 🎵 Royalty-free music and sound effects (CC0)
+- 🖼️ Photo editor and collage
+- 💾 MP4 and WebM export up to 8K, from 24 to 60 fps
+- 📱 Phone, tablet and desktop, light and dark theme, many languages
+- 🔒 Everything stays on your device, nothing is uploaded
 
 ---
 
-## Proje Yapısı
+## How It Works
 
-Kökte yalnızca üç dosya vardır. Uygulama iki klasöre bölünmüştür: `mms/` uygulamanın kendisini (kod, bileşenler, stiller), `m.m.s/` ise diller, kütüphaneler, örnekler, betikler ve tek dosyalık sürümü içerir. Böylece her iki klasör de GitHub'ın tek seferde yükleme sınırının altında kalır. Klasör adları İngilizcedir ve her klasörün ne işe yaradığı `m.m.s/DOCS.md` rehberinde anlatılır.
+1. Tap Create and choose a photo or video. Photos open in the photo editor, videos in the video editor.
+2. Add videos, photos and audio.
+3. Edit on the timeline: cut, and add titles, transitions, effects and color.
+4. Export your video as MP4 or WebM.
+
+---
+
+## Project Structure
+
+There are only three files at the root. The app is split into two folders: `mms/` contains the app itself (code, components, styles), and `m.m.s/` contains languages, libraries, examples, scripts and the single-file build. This keeps both folders under GitHub's single-upload limit. Folder names are in English, and what each folder does is explained in the `m.m.s/DOCS.md` guide.
 
 ```text
 multi.media.studio/
-├── index.html              ana sayfa ve koşullar (uygulamanın giriş noktası)
-├── README.md               bu dosya
-├── LICENSE                 MIT lisansı
-├── mms/                    uygulama
-│   ├── app.webmanifest     uygulama kimliği: ad, simge, renk (ana ekrana ekleme)
+├── index.html              landing page and terms (the app's entry point)
+├── README.md               this file
+├── LICENSE                 MIT license
+├── mms/                    the app
+│   ├── app.webmanifest     app identity: name, icon, color (add to home screen)
 │   ├── assets/
-│   │   ├── css/            base, landing, studio, photo-editor stilleri
-│   │   ├── icons/          uygulama simgeleri ve README logosu
-│   │   └── fonts/          açık lisanslı yazı tipleri (tek dosyada) ve lisans metinleri
+│   │   ├── css/            base, landing, studio, photo-editor styles
+│   │   ├── icons/          app icons and README logo
+│   │   └── fonts/          openly licensed fonts (in a single file) and license texts
 │   ├── src/
 │   │   ├── main.js, boot.js, config.js
-│   │   ├── core/           ortak yardımcılar, dil, ayarlar ve tema, simgeler
-│   │   ├── studio/         proje listesi, video düzenleyici, zaman çizelgesi, denetçi
-│   │   ├── photo-editor/   fotoğraf düzenleyici ve kolaj
-│   │   ├── media/          dosya içeri aktarma ve doğrulama
-│   │   ├── render/         WebGL birleştirici, efektler, filtreler, geçişler, metin, yazı tipleri, çıkartmalar
-│   │   ├── audio/          müzik ve ses efektlerini üreten sentezleyici
-│   │   ├── export/         MP4 ve WebM dışa aktarma
-│   │   ├── storage/        yerel depolama ve .mmsp paketleri
-│   │   └── workers/        dalga biçimi ve zaman esnetme işçileri
-│   └── components/         ortak arayüz bileşenleri ve kütüphane panelleri
-└── m.m.s/                  uygulamanın yanındaki dosyalar
-    ├── DOCS.md             geliştirici rehberi (her klasörün açıklaması)
-    ├── locales/            diller
+│   │   ├── core/           shared helpers, language, settings and theme, icons
+│   │   ├── studio/         project list, video editor, timeline, inspector
+│   │   ├── photo-editor/   photo editor and collage
+│   │   ├── media/          file import and validation
+│   │   ├── render/         WebGL compositor, effects, filters, transitions, text, fonts, stickers
+│   │   ├── audio/          synthesizer that generates music and sound effects
+│   │   ├── export/         MP4 and WebM export
+│   │   ├── storage/        local storage and .mmsp packages
+│   │   └── workers/        waveform and time-stretch workers
+│   └── components/         shared UI components and library panels
+└── m.m.s/                  files that sit alongside the app
+    ├── DOCS.md             developer guide (description of each folder)
+    ├── locales/            languages
     ├── libraries/          mediabunny (MPL-2.0), fflate (MIT)
-    ├── examples/           örnek efekt ve geçiş dosyaları
-    ├── standalone/         tek dosyalık sürüm (index.html klasörden açılınca bunu kullanır)
-    └── scripts/            dil denetleyici, tek dosya derleme
+    ├── examples/           sample effect and transition files
+    ├── standalone/         single-file build (used when index.html is opened from a folder)
+    └── scripts/            locale checker, single-file build
 ```
 
-Yerel olarak çalıştırmanın en kolay yolu `index.html` dosyasını çift tıklayarak açmaktır. Tarayıcılar klasörden açılan sayfalarda modülleri engellediği için uygulama bu durumda otomatik olarak `m.m.s/standalone/multi-media-studio.html` sürümüne geçer. İsterseniz klasörü bir statik sunucuyla da sunabilirsiniz (örneğin `python3 -m http.server`).
-`python3 m.m.s/scripts/build-single.py` bu tek dosyalık sürümü yeniden derler.
+The easiest way to run it locally is to double-click `index.html`. Because browsers block modules on pages opened from a folder, the app automatically switches to `m.m.s/standalone/multi-media-studio.html` in that case. You can also serve the folder with a static server if you prefer (for example `python3 -m http.server`).
+`python3 m.m.s/scripts/build-single.py` rebuilds this single-file version.
 
 ---
 
