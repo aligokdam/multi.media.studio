@@ -1,8 +1,0 @@
-{
-  "format": "mms-effect",
-  "version": 1,
-  "id": "duotone",
-  "name": { "en": "Duotone", "tr": "Çift Ton" },
-  "defaultAmount": 0.8,
-  "glsl": "vec4 FX(vec2 uv, vec4 c, float a) {\n  vec3 col = unpremul(c);\n  float l = luma(col);\n  vec3 shadow = vec3(0.10, 0.12, 0.30);\n  vec3 light = vec3(1.00, 0.78, 0.45);\n  vec3 d = mix(shadow, light, smoothstep(0.05, 0.95, l));\n  return vec4(mix(col, d, a) * c.a, c.a);\n}"
-}
